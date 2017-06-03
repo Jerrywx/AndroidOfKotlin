@@ -1,6 +1,7 @@
 package com.example.wangxiao.a01android
 
 import android.content.ClipData
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,10 +23,17 @@ class MainActivity : AppCompatActivity() {
 
     /// 设置按钮点击事件
     fun setButton() {
+        /// 点击按钮 Toast
         val button: Button = findViewById(R.id.button_1) as Button
-
         button.setOnClickListener {
             Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
+        }
+
+        /// 点击按钮 切换Activity
+        val button2: Button = findViewById(R.id.open_activity) as Button
+        button2.setOnClickListener {
+            val intent = Intent(this, Main2Activity::class.java)
+            startActivity(intent)
         }
     }
 
