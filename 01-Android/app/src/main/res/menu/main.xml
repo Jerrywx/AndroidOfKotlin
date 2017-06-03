@@ -11,4 +11,9 @@
         android:title="Remove"
         />
 
+    <item
+        android:id="@+id/finish"
+        android:title="Finish"
+        />
+
 </menu>

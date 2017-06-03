@@ -42,8 +42,12 @@ class MainActivity : AppCompatActivity() {
 
         when (i.itemId) {
 
+            R.id.finish ->
+                    finish()
+
             R.id.add_item ->
                     Toast.makeText(this, i.title, Toast.LENGTH_SHORT).show()
+
             R.id.remove_item ->
                     Toast.makeText(this, i.title, Toast.LENGTH_SHORT).show()
         }
