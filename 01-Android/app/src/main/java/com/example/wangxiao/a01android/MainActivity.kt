@@ -12,13 +12,48 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
+    /* 在活动第一次被创建的时候调用 */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        /// log
-        Log.d("Hello, ", "world !")
+        Log.d("Activity, ", "------ onCreate")
         setButton()
+    }
+
+    /* 这个方法在活动由不可见变为可见的时候调用 */
+    override fun onStart() {
+        super.onStart()
+        Log.d("Activity", "------ onStart")
+    }
+
+    /* 这个方法在活动准备好和用户进行交互的时候调用 */
+    override fun onResume() {
+        super.onResume()
+        Log.d("Activity", "------ onResume")
+    }
+
+    /* 这个方法在洗头准备去启动或者恢复另一个活动的时候调用 */
+    override fun onPause() {
+        super.onPause()
+        Log.d("Activity", "------ onPause")
+    }
+
+    /* 这个方法在活动完全不可见的时候调用 */
+    override fun onStop() {
+        super.onStop()
+        Log.d("Activity", "------ onStop")
+    }
+
+    /* 这个方法在活动被销毁之前调用 */
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Activity", "------ onDestroy")
+    }
+
+    /* 这个方法在活动由停止状态变为运行状态之前调用 */
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("Activity", "------ onRestart")
     }
 
     /// 设置按钮点击事件
@@ -29,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
         }
 
+        /// 1. 显示方式
+        /// 2. 隐示方式
         /// 点击按钮 切换Activity
         val button2: Button = findViewById(R.id.open_activity) as Button
         button2.setOnClickListener {
@@ -62,5 +99,7 @@ class MainActivity : AppCompatActivity() {
 
         return true
     }
+
+
 
 }
