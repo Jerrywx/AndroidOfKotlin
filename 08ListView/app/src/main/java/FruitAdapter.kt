@@ -26,7 +26,7 @@ public class FruitAdapter: ArrayAdapter<Fruit> {
         var view = convertView
 
         if (view == null) {
-            var view = LayoutInflater.from(context).inflate(resurceId, parent, false)
+            view = LayoutInflater.from(context).inflate(resurceId, parent, false)
         }
 //        var view = LayoutInflater.from(context).inflate(resurceId, parent, false)
 
