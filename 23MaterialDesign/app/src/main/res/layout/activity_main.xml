@@ -35,14 +35,23 @@
 
     </LinearLayout>
 
-
-    <TextView
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:text="This is Menu"
-        android:textSize="30sp"
-        android:background="#FFF"/>
+        app:menu="@menu/nac_menu"
+        app:headerLayout="@layout/nav_header"
+        />
+
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:text="This is Menu"-->
+        <!--android:textSize="30sp"-->
+        <!--android:background="#FFF"/>-->
 
 </android.support.v4.widget.DrawerLayout>
 

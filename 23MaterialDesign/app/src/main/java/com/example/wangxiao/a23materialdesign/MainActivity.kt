@@ -3,6 +3,7 @@ package com.example.wangxiao.a23materialdesign
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.widget.Button
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         ///
         mDrawerLayout = findViewById(R.id.drawer_layout) as DrawerLayout
+
         var actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -36,6 +38,16 @@ class MainActivity : AppCompatActivity() {
         toolbar.setOnClickListener {
             val intent = Intent(this, ToolBarActivity::class.java)
             startActivity(intent)
+        }
+
+        ////
+        var navView = findViewById(R.id.nav_view) as NavigationView
+        navView.setCheckedItem(R.id.nav_call)
+
+        navView.setNavigationItemSelectedListener { menuItem ->
+            Toast.makeText(this, "JHHH", Toast.LENGTH_SHORT).show()
+            mDrawerLayout?.closeDrawers()
+            true
         }
     }
 
